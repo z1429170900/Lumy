@@ -1,0 +1,29 @@
+@font-color: var(--tab-text-menu-color);
+@menu-bg: var(--tab-text-menu-bg);
+@menu-item-hover-bg: var(--tab-text-menu-item-hover-bg);
+@menu-shadow: var(--tab-text-menu-shadow);
+
+.tab-text-menu {
+    color: @font-color;
+    box-shadow: 0 8px 16px @menu-shadow;
+    background: @menu-bg;
+    border-radius: 8px;
+    ul {
+        list-style: none;
+        padding: 10px 0;
+        margin: 0;
+        li {
+            padding: 2px 30px;
+            margin: 4px 0;
+            cursor: pointer;
+            font-size: 12px;
+            &:hover {
+                background: @menu-item-hover-bg;
+            }
+        }
+        .disabled {
+            color: #888;
+            cursor: not-allowed;
+        }
+    }
+}

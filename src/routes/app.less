@@ -1,0 +1,80 @@
+// 影响全局
+@import './ant-light.css'; // 全量的正常主题下的antd样式
+@import './ant-dark.css'; // 全量的暗黑模式下的antd样式
+@import './theme.less';  // 自家系统主题
+
+html,body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    min-width: 650px;
+    overflow: auto;
+}
+
+:root [data-dark-theme=light] {
+    .theme-light // 继承类
+}
+
+:root [data-dark-theme=dark] {
+    .theme-dark  // 继承类
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+}
+
+.root-niuyou-app {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    color: var(--default-layout-header-color);
+}
+// 修改antd默认样式
+.ant-btn-text {
+    color: var(--default-layout-header-color);
+}
+// 
+.create-to-body {
+    position: fixed;
+}
+
+@media (prefers-color-scheme: dark) {
+    // 触发设备显示模式 暗黑/明亮
+    :root [data-dark-theme=light] {
+        .theme-dark
+    }
+}
+  
+@media (prefers-color-scheme: light) {
+    :root [data-dark-theme=light] {
+        .theme-light
+    }
+}
+
+// do test
+// @media screen and (max-width: 1000px) {
+//     :root [data-dark-theme=light] {
+//         .theme-dark
+//     }
+// }
+
+// close动画
+.close-enter {
+    opacity: 0;
+}
+
+.close-exit {
+    opacity: 1;
+}
+
+.close-enter-active {
+    opacity: 1;
+    transition: all 500ms;
+}
+
+.close-exit-active {
+    opacity: 0;
+    transition: all 500ms;
+}
